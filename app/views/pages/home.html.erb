@@ -1,0 +1,8 @@
+<h1>HOME PAGE</h1>
+
+  <%= form_tag(tips_path, :method => "get", id: "search-input", class: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "?", class: "search-form-textbox" %>
+      <span>
+        <%= submit_tag "Search", class: "submit-btn" %>
+      </span>
+<% end %>
