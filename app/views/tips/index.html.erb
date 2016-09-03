@@ -16,6 +16,8 @@
       <tr>
         <td><%= tip.title %></td>
         <td><%= tip.content %></td>
+        <td><%= link_to 'Upvote', like_tip_path(tip), method: :put %></td>
+        <td><%= link_to 'Downvote', dislike_tip_path(tip), method: :put %></td>
         <td><%= link_to 'Show', tip %></td>
         <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
         <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
