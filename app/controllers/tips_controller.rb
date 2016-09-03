@@ -74,11 +74,13 @@ class TipsController < ApplicationController
   # Upvote
   def upvote
     @tip.upvote_by current_user
+    redirect_to tips_path
   end
 
   # Downvote
   def downvote
     @tip.downvote_by current_user
+    redirect_to tips_path
   end
 
 
