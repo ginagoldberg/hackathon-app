@@ -1,5 +1,5 @@
 class TipsController < ApplicationController
-  before_action :set_tip, only: [:show, :edit, :update, :destroy]
+  before_action :set_tip, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /tips
   # GET /tips.json
@@ -69,6 +69,18 @@ class TipsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  # Upvote
+  def upvote
+    @tip.upvote_by current_user
+  end
+
+  # Downvote
+  def downvote
+    @tip.downvote_by current_user
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
