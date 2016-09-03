@@ -14,6 +14,7 @@
       <tr>
         <td><%= tip.title %></td>
         <td><%= tip.content %></td>
+        <td>Votes: <%= tip.score %></td>
         <td><%= link_to 'Upvote', like_tip_path(tip), method: :put %></td>
         <td><%= link_to 'Downvote', dislike_tip_path(tip), method: :put %></td>
         <td><%= link_to 'Show', tip %></td>
