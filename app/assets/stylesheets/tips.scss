@@ -1,3 +1,54 @@
 // Place all the styles related to the Tips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Baloo Bhaina', cursive;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+
+.card {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 20px;
+  .card-section {
+    text-align: center;
+  }
+}
+
+.card-aside {
+  flex: 0 0 400px;
+  padding: 15x;
+  align-self: stretch;
+  background: #DFF0D8;
+  border-left: 1px solid #f0efef;
+  .card-section {
+    text-align: right;
+  }
+
+}
+.card-section {
+  margin: 40px auto;
+}
+.card-section:first-child {
+  margin-top: 0;
+}
+.card-section:last-child {
+  margin-bottom: 0;
+}
+
+.card-section img {
+  height: 35px;
+  padding: .5em;
+}

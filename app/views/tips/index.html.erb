@@ -1,31 +1,33 @@
-<h1>Listing Tips</h1>
+<h1>Tips</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tips.each do |tip| %>
-      <tr>
-        <td><%= tip.title %></td>
-        <td><%= tip.content %></td>
-        <td>Votes: <%= tip.score %></td>
-        <td><%= link_to 'Upvote', like_tip_path(tip), method: :put %></td>
-        <td><%= link_to 'Downvote', dislike_tip_path(tip), method: :put %></td>
-        <td><%= link_to 'Show', tip %></td>
-        <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
-        <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+<% @tips.each do |tip| %>
+<div class="card">
+  <div class="card-body">
+    <div class="card-section">
+      <h3><%= tip.title %></h3>
+      <p><%= tip.content %></p>
+    </div>
 
-  </tbody>
-</table>
+    <div class="card-aside">
+      <div class="card-section">
+
+       Score: <%= tip.score %>
+
+       <!-- Add comment, this does not have correct functionality but is for demo purposes -->
+       <%= link_to 'Comment', edit_tip_path(tip) %>
+       <%= link_to 'X', tip, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+         <%= link_to image_tag("like.png"), like_tip_path(tip), method: :put %>
+       <%= link_to image_tag("dislike.png"),  dislike_tip_path(tip), method: :put %>
+
+     </div>
+   </div>
+ </div>
+</div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Tip', new_tip_path %>
+<%= link_to '+', new_tip_path %>

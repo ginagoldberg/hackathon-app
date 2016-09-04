@@ -12,7 +12,7 @@ class TipsController < ApplicationController
       @tips = @tips.search(@search)
     end
 
-    @tips = @tips.order('created_at DESC')
+    @tips = @tips.order('created_at ASC')
 
   end
 

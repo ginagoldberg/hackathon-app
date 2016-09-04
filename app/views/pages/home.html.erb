@@ -1,8 +1,15 @@
-<h1>HOME PAGE</h1>
 
-  <%= form_tag(tips_path, :method => "get", id: "search-input", class: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "?", class: "search-form-textbox" %>
-      <span>
-        <%= submit_tag "Search", class: "submit-btn" %>
+<div class="banner">
+  <div>
+    <h1>DURABLE</h1>
+    <h2>Make it last!</h2>
+    <div>
+      <%= form_tag(tips_path, :method => "get", id: "search-input", class: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "", class: "search-form-textbox" %>
+      <span class="button">
+        <%= submit_tag "Search", class: "btn btn-success btn-lg" %>
       </span>
-<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
