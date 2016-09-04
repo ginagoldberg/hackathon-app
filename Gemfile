@@ -29,6 +29,17 @@ gem 'devise'
 # Add gem to include voting
 gem 'acts_as_votable', '~> 0.10.0'
 
+# Configuring puma and capistrano for deployment
+gem 'figaro'
+gem 'puma'
+group :development do
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
